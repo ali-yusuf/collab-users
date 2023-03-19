@@ -2,7 +2,7 @@
   <div class="login">
     <span>
       <h2>Login Data To Api into PostGreSql</h2>
-      <!-- <component v-bind:is="component"></component> -->
+      <component v-bind:is="component"></component>
       <!-- <Button id ="signup" text="Signup"  v-on:click = "component = 'PostComponent' " color = "green" /> -->
 
       <Button id="close" v-on:click="close" text="X" color="green"
@@ -56,7 +56,7 @@ export default {
     async Login() {
       try {
         const result = await axios.post(
-          "http://localhost:2000/login" + "/" + this.email
+          "http://localhost:2000/test" + "/" + this.email
         );
         // console.log(JSON.stringify(result));
         const { token } = result.data || {};

@@ -1,51 +1,55 @@
 <template>
   <div class="container">
     <navbar />
-    <!-- <button @click="signup"> check </button> -->
-    <!-- <component v-bind:is="component"></component>
-      <Button id ="signup" text="Signup"  v-on:click = "component = 'PostComponent' " color = "green" /> -->
+    <h1>Welocme to yor first page</h1>
+    <button @click="signup">check</button>
+    <component v-bind:is="component"></component>
+    <Button
+      id="signup"
+      text="Signup"
+      v-on:click="component = 'PostComponent'"
+      color="green"
+    />
 
-    <!-- <Header/> -->
-    <!-- <tasks/> -->
-    <!-- <p> {{cart}}</p> -->
+    <tasks />
+    <p>{{ cart }}</p>
 
     <!-- <Suspense>
-   <template #default>
-<Testapi/> 
-</template>
-<template #fallback>
-  <h3>Loading....</h3>
-</template>
-</Suspense> -->
+      <template #default>
+        <Testapi />
+      </template>
+      <template #fallback>
+        <h3>Loading....</h3>
+      </template>
+    </Suspense> -->
+    <router-view></router-view>
   </div>
 </template>
 <script>
-//import Button from './components/Button.vue'
+import Button from "./components/Button.vue";
 //import { response } from 'express'
 //const process = require('process');
-//const client = require('./database');
+// const client = require("./database");
 
-//import Header from './components/Header.vue'
-import { defineComponent } from "@vue/runtime-core";
 import navbar from "./components/navbar.vue";
-// import Home from './components/Home.vue'
-// import Tasks from './components/Tasks.vue'
-//import Testapi from './components/testapi.vue'
-//import PostComponent from './components/PostComponent.vue'
+import Home from "./components/Home.vue";
+import Tasks from "./components/Tasks.vue";
+import Testapi from "./components/testapi.vue";
+import PostComponent from "./components/PostComponent.vue";
+import Header from "./components/Header.vue";
 
-//import PostComponent from './components/PostComponent.vue'
+//import AuthenticationService from './services/AuthenticationService';
 
-// import AuthenticationService from './services/AuthenticationService'
-
-export default defineComponent({
+export default {
   name: "App",
   components: {
-    // Header,
     navbar,
-    //Home
-    //Tasks,
-    //Testapi,
-    // Button
+    Header,
+    Home,
+    Tasks,
+    Testapi,
+    Button,
+    PostComponent,
   },
 
   data() {
@@ -56,80 +60,23 @@ export default defineComponent({
       cart: 0,
     };
   },
-  methods: {
-    signup() {
-      this.$router.push({ path: "/signup" });
-    },
-  },
-  // methods:{
-  //  test(){
-  //      AuthenticationService.test({
-  //     name:this.name,
-  //     email:this.email
-  //           })
-
-  //         // alert(this.msg+"message")
-  //         // this.check =true
-
-  //      }
-
-  // }
-  //   methods:{
-  //     async login(){
-  //       try{
+  // methods: {
+  //   signup() {
+  //     this.$router.push({ path: "/signup" });
+  //   },
+  //   async login() {
+  //     try {
   //       await client.connect();
-  //       const result =  client.query("select * from test")
-
-  //       this.tasks = (result.rows);
-
-  // }
-
-  //       catch(error){
-  //         alert(error+"Errot is here")
-
-  //       }
-  //       client.end();
+  //       const result = client.query("select * from test");
+  //       this.tasks = result.rows;
+  //     } catch (error) {
+  //       alert(error + "Errot is here");
   //     }
-
-  //   }
-});
-
-/*(async() => {
-       await client.connect();
-       const result = await client.query('select * from test');
-      //console.log(result.rows);
-     //alert(result.rows);
-     return result.rows;
-
-     //client.end();
-})();
-  console.log(this.tasks);
-   }
-/*created()
-{
-      this.tasks= [
-      {
-       id:1,
-       text:'Ali',
-        email:'ali@gmail.com'
-      },
-       {
-         id:2,
-        text:'Aliya',
-        email:'aliya@gmail.com'
-
-      },
-      {
-        id:3,
-        text:'Aleena',
-        email:'aleena@gmail.com'
-
-       }
-      ]
-  console.log(this.tasks);
-}*/
+  //     client.end();
+  //   },
+  // },
+};
 </script>
-
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 * {

@@ -7,10 +7,9 @@ import Subject from './components/Subject'
 import Test from './components/Test'
 import Aboutus from './components/Aboutus'
 import login from './components/login'
-// import Header from './components/Header'
+//import Header from './components/Header'
 
 // import { defineComponent } from '@vue/runtime-core'
-
 // Vue.use(Router)
 // export default defineComponent({
 const routes = [{

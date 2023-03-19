@@ -36,12 +36,12 @@
 </template>
 <script>
 //import { defineComponent } from 'vue'     //'@vue/composition-api'
-import { defineComponent } from "@vue/runtime-core";
+
 import ComputerScience from "./ComputerScience.vue";
 import Maths from "./Maths.vue";
 import testapi from "./testapi.vue";
 import Aptitude from "./Aptitude.vue";
-export default defineComponent({
+export default {
   components: { testapi, ComputerScience, Maths, Aptitude },
   // setup() {
   name: "Subject",
@@ -62,7 +62,7 @@ export default defineComponent({
       },
     },
   },
-});
+};
 </script>
 <style scoped>
 /* #first{

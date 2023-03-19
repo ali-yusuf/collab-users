@@ -1,5 +1,7 @@
 <template>
-    <button v-on:click = "onClick()" :style="{background:color}" class ="btn"> {{text}} </button>
+  <button v-on:click="onClick()" :style="{ background: color }" class="btn">
+    {{ text }}
+  </button>
 </template>
 
 <script>
@@ -7,20 +9,20 @@
 //const client = require('./database');
 
 export default {
-   name:'Button',
+  name: "Button",
 
-   props:{
- text: String,
- color: String
-   },
+  props: {
+    text: String,
+    color: String,
+  },
 
-   methods:{
-       onClick(){
-           //console.log('login');
-           
+  methods: {
+    onClick() {
+      console.log("login");
+      this.$emit("open-subject");
 
-          // alert("you have pressed login.")
-       }
-   }
-}
+      // alert("you have pressed login.")
+    },
+  },
+};
 </script>
