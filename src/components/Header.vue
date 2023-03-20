@@ -114,6 +114,9 @@ header {
   /* justify-content: space-between; */
   align-items: left;
   margin-left: 600px;
+  height: 50px;
+  width: fit-content;
+  background-color: yellow;
   /* margin-bottom: 10px; */
 }
 #login {

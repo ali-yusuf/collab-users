@@ -8,4 +8,12 @@ const client = new Client({
     database: "postgres"
 })
 
+// client.connect();
+// client.query(`select * from test`, (err, res) => {
+//     if (!err) {
+//         console.log(res.rows)
+//     }
+//     client.end();
+// })
+
 module.exports = client;
