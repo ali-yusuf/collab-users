@@ -2,6 +2,10 @@
   <div id="home">
     <h1>Welocome to Collab learn.</h1>
     <p>your code will appear here</p>
+    <p>
+      For CUET syllabus
+      <a href="/assets/pdfs/IBCUETUG2023.pdf" target="_blank">click here</a>.
+    </p>
     <div class="row">
       <div class="col-md-4">
         <collab-card />

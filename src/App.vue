@@ -3,6 +3,10 @@
     <navbar />
     <h1>Welocme to yor first page</h1>
     <button @click="getData">check here</button>
+    <div class="text-bg" v-for="user in tasks" :key="user.Id">
+      <h3 class="green-text">{{ user.name }}</h3>
+      <p>{{ user.email }}</p>
+    </div>
     <component v-bind:is="component"></component>
     <!-- <Button
       id="signup"
@@ -30,13 +34,18 @@ import Button from "./components/Button.vue";
 //import { response } from 'express'
 //const process = require('process');
 //const client = require("./database");
+//const fs = require("fs");
+import axios from "axios";
 
 import navbar from "./components/navbar.vue";
 import Home from "./components/Home.vue";
 import Tasks from "./components/Tasks.vue";
-import Testapi from "./components/testapi.vue";
+//import TestApi from "./components/TestApi.vue";
 import PostComponent from "./components/PostComponent.vue";
 import Header from "./components/Header.vue";
+import Test from "./components/Test.vue";
+//import userData from "./users.json";
+//let users = [];
 
 //import AuthenticationService from './services/AuthenticationService';
 
@@ -47,16 +56,18 @@ export default {
     Header,
     Home,
     Tasks,
-    Testapi,
+    //TestApi,
     Button,
     PostComponent,
+    Test,
   },
 
   data() {
     return {
       tasks: [],
-      name: String,
-      email: String,
+      // Id: Number,
+      // name: String,
+      // email: String,
       cart: 0,
     };
   },
@@ -65,17 +76,26 @@ export default {
     // signup() {
     //   this.$router.push({ path: "/signup" });
     // },
-    // async getData() {
-    //   try {
-    //     await client.connect();
-    //     const result = await client.query("select * from test");
-    //     this.tasks = result.rows;
-    //     console.log(result.rows);
-    //   } catch (error) {
-    //     alert(error + "Errot is here");
-    //   }
-    //   client.end();
-    // },
+    getData() {
+      // this.tasks = JSON.parse(JSON.stringify(userData));
+      // console.log(this.tasks);
+      // console.log(userData);
+      axios
+        .get("http://localhost:2000/users")
+        .then((response) => {
+          console.log("User got successfully:", response.data);
+          this.tasks = response.data;
+
+          // Do something with the response, such as updating the UI or redirecting to another page
+        })
+        .catch((error) => {
+          console.error("Error getting user:", error);
+          // Handle the error, such as displaying an error message to the user
+        });
+    },
+
+    //});
+    //  client.end();
   },
 };
 </script>
@@ -88,6 +108,16 @@ export default {
 } */
 body {
   font-family: "Poppins", sans-serif;
+}
+.green-text {
+  color: green;
+}
+.text-bg {
+  width: 200px;
+  background: antiquewhite;
+  text-align: center;
+  border: 3px solid green;
+  margin-top: 5px;
 }
 .container {
   /* margin: 30px auto; */

@@ -5,6 +5,7 @@ import PostComponent from './components/PostComponent'
 import Home from './components/Home'
 import Subject from './components/Subject'
 import Test from './components/Test'
+import Testapi from './components/Testapi'
 import Aboutus from './components/Aboutus'
 import login from './components/login'
 //import Header from './components/Header'
@@ -31,6 +32,11 @@ const routes = [{
             path: '/test',
             name: 'test',
             component: Test
+        },
+        {
+            path: '/testapi',
+            name: 'TestApi',
+            component: Testapi
         },
         {
             path: '/aboutus',

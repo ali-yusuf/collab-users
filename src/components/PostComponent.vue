@@ -20,7 +20,7 @@
           </ul>
           </div> -->
 
-      <input type="number" name="id" placeholder="id" v-model="posts.id" />
+      <input type="number" name="Id" placeholder="Id" v-model="posts.Id" />
       <br />
       <br />
       <input type="text" name="name" placeholder="name" v-model="posts.name" />
@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       posts: {
-        id: "",
+        Id: "",
         name: "",
         email: "",
         password: "",

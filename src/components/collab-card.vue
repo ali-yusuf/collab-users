@@ -8,6 +8,13 @@
         <h4>10000+ questions</h4>
         <p>Start your preperation with concept and practice</p>
       </div>
+      <div>
+        <p>
+          For CUET syllabus
+          <a href="/assets/pdfs/IBCUETUG2023.pdf" target="_blank">click here</a
+          >.
+        </p>
+      </div>
     </div>
   </div>
 </template>

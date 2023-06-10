@@ -7,6 +7,7 @@
     <Button id="home" v-on:click="home" text="Home" color="green" />
     <Button id="subject" v-on:click="subject" text="SUBJECTS" color="green" />
     <Button id="test" v-on:click="test" text="TEST" color="green" />
+    <Button id="testapi" v-on:click="testapi" text="TEST Api" color="green" />
     <Button id="about" v-on:click="aboutus" text="About Us" color="green" />
     <Button id="login" text="Login" @click="login" color="green" />
     <Button id="signup" text="Signup" v-on:click="signup" color="green" />
@@ -91,6 +92,9 @@ export default defineComponent({
     },
     login() {
       this.$router.push({ path: "/login" });
+    },
+    testapi() {
+      this.$router.push({ path: "/testapi" });
     },
     close() {
       this.$router.push({ path: "/" });

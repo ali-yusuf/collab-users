@@ -39,10 +39,10 @@
 
 import ComputerScience from "./ComputerScience.vue";
 import Maths from "./Maths.vue";
-import testapi from "./testapi.vue";
+//import Testapi from "./TestApi.vue";
 import Aptitude from "./Aptitude.vue";
 export default {
-  components: { testapi, ComputerScience, Maths, Aptitude },
+  components: { ComputerScience, Maths, Aptitude },
   // setup() {
   name: "Subject",
   data() {
