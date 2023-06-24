@@ -3,14 +3,33 @@
     <!-- <h1>{{ title }}</h1>
     <h2>{{show}}</h2>
     <h2>{{sh}}</h2> -->
-
-    <Button id="home" v-on:click="home" text="Home" color="green" />
-    <Button id="subject" v-on:click="subject" text="SUBJECTS" color="green" />
-    <Button id="test" v-on:click="test" text="TEST" color="green" />
-    <Button id="testapi" v-on:click="testapi" text="TEST Api" color="green" />
-    <Button id="about" v-on:click="aboutus" text="About Us" color="green" />
-    <Button id="login" text="Login" @click="login" color="green" />
-    <Button id="signup" text="Signup" v-on:click="signup" color="green" />
+    <ul>
+      <li><Button id="home" v-on:click="home" text="Home" color="green" /></li>
+      <li>
+        <Button
+          id="subject"
+          v-on:click="subject"
+          text="SUBJECTS"
+          color="green"
+        />
+      </li>
+      <li><Button id="test" v-on:click="test" text="TEST" color="green" /></li>
+      <li>
+        <Button
+          id="testapi"
+          v-on:click="testapi"
+          text="TEST Api"
+          color="green"
+        />
+      </li>
+      <li>
+        <Button v-on:click="aboutus" text="About Us" color="green" />
+      </li>
+      <li><Button text="Login" @click="login" color="green" /></li>
+      <li>
+        <Button text="Signup" v-on:click="signup" color="green" />
+      </li>
+    </ul>
 
     <!-- This section of code is used to make it single page application, You can
     call a component over it -->
@@ -27,13 +46,13 @@
       text="About Us"
       color="green"
     /> -->
-    <Button id="login" text="Login" @click="login" color="green" />
+    <!-- <Button id="login" text="Login" @click="login" color="green" /> -->
 
     <PostCpmponent v-on:isVisible="onclickChild($event)" />
-    <Button
+    <!-- <Button
       :text="login ? 'Close' : 'login'"
       :color="showAddTask ? 'red' : 'green'"
-    />
+    /> -->
   </header>
 </template>
 
@@ -113,18 +132,22 @@ export default defineComponent({
 </script>
 
 <style scoped>
+li {
+  display: inline;
+}
 header {
   display: flex;
+  position: absolute;
+  right: 0;
   /* justify-content: space-between; */
   align-items: left;
-  margin-left: 600px;
-  height: 50px;
+  height: 58px;
   width: fit-content;
   background-color: yellow;
-  /* margin-bottom: 10px; */
+  margin-left: 10px;
 }
 #login {
-  position: fixed;
+  position: absolute;
   top: 0px;
   right: 200px;
 }

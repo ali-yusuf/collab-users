@@ -6,6 +6,7 @@
     <div class="text-bg" v-for="user in tasks" :key="user.Id">
       <h3 class="green-text">{{ user.name }}</h3>
       <p>{{ user.email }}</p>
+      <p>{{ user.password }}</p>
     </div>
     <component v-bind:is="component"></component>
     <!-- <Button
@@ -116,7 +117,6 @@ body {
   width: 200px;
   background: antiquewhite;
   text-align: center;
-  border: 3px solid green;
   margin-top: 5px;
 }
 .container {
@@ -133,9 +133,7 @@ body {
   display: inline-block;
   background: #000;
   color: #fff;
-  border: none;
   padding: 10px 20px;
-  /* border-radius: 5px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;

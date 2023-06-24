@@ -10,7 +10,7 @@
     <!-- <Button id="close" text="X"  v-on:click = "component = 'Testapi'" color = "green"/></span> -->
 
     <!-- <form @submit.prevent="Login" method ="login"> -->
-    <form @submit.prevent="Login" method="post">
+    <form @submit.prevent="login" method="post">
       <input type="text" name="email" placeholder="email" v-model="email" />
       <br />
       <br />
@@ -52,24 +52,45 @@ export default {
     };
   },
   methods: {
-    //Method to create user or submit data through form
-    async Login() {
-      try {
-        const result = await axios.post(
-          "http://localhost:2000/test" + "/" + this.email
-        );
-        // console.log(JSON.stringify(result));
-        const { token } = result.data || {};
-        localStorage.setItem("token", token);
-        console.log(token);
-        this.$router.push({ path: "/subject" });
-      } catch (error) {
-        console.log(error);
-        alert("Invalid Email or Password.");
-      }
+    login() {
+      const userData = {
+        email: this.email,
+        password: this.password,
+      };
+
+      // Make a POST request to your login endpoint
+      axios
+        .post("http://localhost:2000/login", userData)
+        .then((response) => {
+          console.log("Login successful:", response.data);
+          // Do something with the response, such as storing the token or redirecting to another page
+        })
+        .catch((error) => {
+          console.error("Login failed:", error);
+          // Handle the error, such as displaying an error message to the user
+        });
     },
   },
 };
+// methods: {
+//Method to create user or submit data through form
+// async Login() {
+//   try {
+//     const result = await axios.post(
+//       "http://localhost:2000/test" + "/" + this.email
+//     );
+//     // console.log(JSON.stringify(result));
+//     const { token } = result.data || {};
+//     localStorage.setItem("token", token);
+//     console.log(token);
+//     this.$router.push({ path: "/subject" });
+//   } catch (error) {
+//     console.log(error);
+//     alert("Invalid Email or Password.");
+//   }
+// },
+
+//};
 // .then(
 //   (res) => console.log(res + " " + this.token),
 //   this.$router.push({ path: "/subject" })
