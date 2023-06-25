@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="app">
     <navbar />
     <h1>Welocme to yor first page</h1>
     <button @click="getData">check here</button>
