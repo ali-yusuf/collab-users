@@ -1,0 +1,19 @@
+[{
+        "id": 1,
+        "question": "Capital of India",
+        "A": "Lonow",
+        "B": "Lonow",
+        "C": "Lonow",
+        "D": "Delhi",
+        "answer": "D"
+    },
+    {
+        "id": 2,
+        "question": "Capital of UP",
+        "A": "Lonow",
+        "B": "Lucknow",
+        "C": "Lonow",
+        "D": "Delhi",
+        "answer": "B"
+    }
+]
