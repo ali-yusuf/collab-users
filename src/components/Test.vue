@@ -55,8 +55,8 @@
           </p>
         </div> -->
           <p v-if="capital[task.id]">
-            your answer: {{ capital[task.id] }}<br />correct answer:
-            {{ task.answer }}
+            your answer: {{ capital[task.id] }}
+            <span style="color: green;">correct answer: {{ task.answer }}</span>
           </p>
         </li>
       </ol>
@@ -120,8 +120,6 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.questions {
-}
 label {
   margin-left: 10px;
   margin-right: 10px;

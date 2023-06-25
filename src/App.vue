@@ -17,7 +17,7 @@
     /> -->
 
     <tasks />
-    <p>{{ cart }}</p>
+    <!-- <p>{{ cart }}</p> -->
 
     <!-- <Suspense>
       <template #default>

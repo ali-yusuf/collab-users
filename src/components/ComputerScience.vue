@@ -1,129 +1,127 @@
 <template>
-    <div class ="container">
-        <h1> Learn Computer Science</h1>
-        <!-- Override the button with fetchdata method -->
-    <Button id = "fetch" v-on:click = "fetchData" text="Click Here" color = "green"/>
-    <div class = "user">
-    <ul v-for ="task in mutableList" :key="task.id">
-        <!-- {{"Id: "+task.id}}  -->
-       <h2> {{task.title}} </h2> <p>{{task.description}}</p>
-       <br> <br>  </ul>
-</div>
- </div> 
+  <div id="computer">
+    Welocme to computer page bro... <br />
+    you can get the computer test series from this page only.. Solve the
+    following questions..
+    <!-- <Button id="fetch" v-on:click="fetchData" text="FetchData" color="green" /> -->
+
+    <div>
+      <ol class="content-block">
+        <li v-for="task in mutableList" :key="task.id">
+          <p>
+            <strong>{{ task.question }}</strong>
+          </p>
+          <input
+            type="radio"
+            id="{{task.A}}"
+            value="A"
+            v-model="capital[task.id]"
+            :checked="false"
+          />
+          <label for="{{task.A}}"> {{ task.A }}</label>
+          <input
+            type="radio"
+            id="{{task.B}}"
+            value="B"
+            v-model="capital[task.id]"
+            :checked="false"
+          />
+          <label for="{{task.B}}"> {{ task.B }}</label>
+          <input
+            type="radio"
+            id="{{task.C}}"
+            value="C"
+            v-model="capital[task.id]"
+            :checked="false"
+          />
+          <label for="C"> {{ task.C }}</label>
+          <input
+            type="radio"
+            id="{{task.D}}"
+            value="D"
+            v-model="capital[task.id]"
+            :checked="false"
+          />
+          <label for="{{task.D}}"> {{ task.D }}</label>
+
+          <!-- <h3>{{ capital[task.id] }}</h3> -->
+          <!-- <div v-if="capital[task.id]"> -->
+          <!-- <p>condition to check wether ans is correct or wrong</p>
+        <div v-if="task.answer == capital[task.id]">
+          <p>
+            your answer : {{ capital[task.id] }}<br />
+            correct answer: {{ task.answer }}<br />
+            marsks obtained: 2.0
+          </p>
+        </div> -->
+          <p v-if="capital[task.id]">
+            your answer: {{ capital[task.id] }}
+            <span style="color: green;">correct answer: {{ task.answer }}</span>
+          </p>
+        </li>
+      </ol>
+    </div>
+  </div>
 </template>
 <script>
-//import axios from 'axios';
-import Button from './Button.vue';
- 
+import { defineComponent } from "@vue/runtime-core";
+// import Button from "./Button.vue";
+export default defineComponent({
+  // setup() {
+  // },
+  // components: { Button },
+  name: "maths",
 
-export default {
-  components: 
-  { Button },
-     data(){
-         
-       return{
-          
-     
-     mutableList: [],
-
-      
-        }
-     },
-     name:'ComputerScience',
-     props:{
-      users:Array,
-     },
-      methods:{
-        //Fetch Method get data from API
-         fetchData(){
-             
-          fetch("http://localhost:2000/computer")
-         .then(res => res.json())
-         .then((data) => {
-         this.mutableList = data;})
-        .catch(err => console.log(err.meassage))
-      
-        }
-     },
-    //Get Data using axios , It is not working fine now
-      /*methods:{
-         fetchData(){
-          axios.get("http://localhost:2000/test")
-          .then(res => res.json())
-          .then((data) => {
-              this.mutableList = data;})
-         .catch(err => console.log(err.meassage))
-         }
-         },*/
-     /* mounted(){
-          fetch("http://localhost:2000/test")
-          .then(res => res.json())
-         .then((data) => {
-              this.mutableList = data;})
-         .catch(err => console.log(err.meassage))
-      }*/
-
-      
-    
-    //fetch api using asynch method
-    /* async setup() {
-        try {
-           
-        const result= await axios.get('http://localhost:2000/test/')
-       
-       console.log(result)
-        this.mutableList=result
-       return { result }
-       } catch (error) {
-         console.log(error)
-            
-    }
-  }*/
-    //  data(){
-    //    return{
-    // //   tasks:[{"name":"hello","email":"a@gmail.com"},
-    // //   {"name":"hello","email":"a@gmail.com"}],
-    // tasks:[],
-    //   name:String,
-    //   email:String
-    //     }
-    //  },
-    
-    // // name:'Tasks',
-    //props:{
-    // taskss:Array,
-    //  },
-}
-
+  data() {
+    return {
+      mutableList: [
+        {
+          id: 1,
+          question: "Capital of India",
+          A: "Lonow",
+          B: "Lonow",
+          C: "Lonow",
+          D: "Delhi",
+          answer: "D",
+        },
+        {
+          id: 2,
+          question: "Capital of UP",
+          A: "Lonow",
+          B: "Lucknow",
+          C: "Lonow",
+          D: "Delhi",
+          answer: "B",
+        },
+      ],
+      capital: [],
+      count: 0,
+      //clicked: false,
+    };
+  },
+  props: {
+    users: Array,
+  },
+  methods: {
+    //Fetch Method get data from API
+    // fetchData() {
+    //   fetch("http://localhost:2000/computerquize")
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       this.mutableList = data;
+    //     })
+    //     .catch((err) => console.log(err.meassage));
+    //   this.answer = this.mutableList.answer;
+    // },
+    incrementCounter: function() {
+      this.count += 1;
+    },
+  },
+});
 </script>
-
 <style scoped>
-.container{
-    height: 100%;
-    width: 10
-    0%;
-    background-color: darkgray;
-    color: #000;
-}
-.user{
-    height: 100%;
-    width: 100%;
-    padding: 5px;
-    background-color: yellow;
-    color:green
-}
-h1{
-    text-align: center;
-    color: black;
-}
-#fetch{
-    position: relative;
-    left:45%
-    
-}
-ul{
-    margin-left: 20px;
+label {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 </style>
-
-

@@ -1,6 +1,6 @@
 <template>
-  <div id="maths">
-    Welocme to maths page bro... <br />
+  <div id="physics">
+    Welocme to physics page bro... <br />
     you can get the naths test series from this page only.. Solve the following
     questions..
     <!-- <Button id="fetch" v-on:click="fetchData" text="FetchData" color="green" /> -->
@@ -47,13 +47,13 @@
           <!-- <h3>{{ capital[task.id] }}</h3> -->
           <!-- <div v-if="capital[task.id]"> -->
           <!-- <p>condition to check wether ans is correct or wrong</p>
-        <div v-if="task.answer == capital[task.id]">
-          <p>
-            your answer : {{ capital[task.id] }}<br />
-            correct answer: {{ task.answer }}<br />
-            marsks obtained: 2.0
-          </p>
-        </div> -->
+          <div v-if="task.answer == capital[task.id]">
+            <p>
+              your answer : {{ capital[task.id] }}<br />
+              correct answer: {{ task.answer }}<br />
+              marsks obtained: 2.0
+            </p>
+          </div> -->
           <p v-if="capital[task.id]">
             your answer: {{ capital[task.id] }}
             <span style="color: green;">correct answer: {{ task.answer }}</span>
@@ -70,7 +70,7 @@ export default defineComponent({
   // setup() {
   // },
   // components: { Button },
-  name: "maths",
+  name: "physics",
 
   data() {
     return {

@@ -8,6 +8,12 @@ import Test from './components/Test'
 import Testapi from './components/Testapi'
 import Aboutus from './components/Aboutus'
 import login from './components/login'
+import Maths from './components/Maths'
+import Computer from './components/ComputerScience'
+import Physics from './components/Physics'
+import Chemistry from './components/Chemistry'
+
+
 //import Header from './components/Header'
 
 // import { defineComponent } from '@vue/runtime-core'
@@ -47,6 +53,26 @@ const routes = [{
             path: '/login',
             name: 'login',
             component: login
+        },
+        {
+            path: '/maths',
+            name: 'maths',
+            component: Maths
+        },
+        {
+            path: '/computer',
+            name: 'computer',
+            component: Computer
+        },
+        {
+            path: '/physics',
+            name: 'physics',
+            component: Physics
+        },
+        {
+            path: '/chemistry',
+            name: 'chemistry',
+            component: Chemistry
         }
 
     ]

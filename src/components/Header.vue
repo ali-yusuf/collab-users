@@ -13,15 +13,46 @@
           color="green"
         />
       </li>
-      <li><Button id="test" v-on:click="test" text="TEST" color="green" /></li>
       <li>
+        <div class="dropdown">
+          <Button id="test" v-on:click="test" text="TEST" color="green" />
+
+          <div class="dropdown-content">
+            <Button
+              id="maths"
+              v-on:click="maths"
+              text="Mathematics (Applied & Core)"
+              color="green"
+            />
+            <Button
+              id="computer"
+              v-on:click="computer"
+              text="Computer Science/Informatics Practices"
+              color="green"
+            />
+            <Button
+              id="physics"
+              v-on:click="physics"
+              text="Physics"
+              color="green"
+            />
+            <Button
+              id="chemistry"
+              v-on:click="chemistry"
+              text="Chemistry"
+              color="green"
+            />
+          </div>
+        </div>
+      </li>
+      <!-- <li>
         <Button
           id="testapi"
           v-on:click="testapi"
           text="TEST Api"
           color="green"
         />
-      </li>
+      </li> -->
       <li>
         <Button v-on:click="aboutus" text="About Us" color="green" />
       </li>
@@ -112,11 +143,17 @@ export default defineComponent({
     login() {
       this.$router.push({ path: "/login" });
     },
-    testapi() {
-      this.$router.push({ path: "/testapi" });
+    maths() {
+      this.$router.push({ path: "/maths" });
     },
-    close() {
-      this.$router.push({ path: "/" });
+    computer() {
+      this.$router.push({ path: "/computer" });
+    },
+    physics() {
+      this.$router.push({ path: "/physics" });
+    },
+    chemistry() {
+      this.$router.push({ path: "/chemistry" });
     },
   },
   // //   computed: {
@@ -141,10 +178,8 @@ header {
   right: 0;
   /* justify-content: space-between; */
   align-items: left;
-  height: 58px;
+  height: 44px;
   width: fit-content;
-  background-color: yellow;
-  margin-left: 10px;
 }
 #login {
   position: absolute;
@@ -157,10 +192,10 @@ header {
   top: 0px;
   right: 60px;
 }
-#login:hover {
+button:hover {
   text-decoration: underline;
 }
-#signup:hover {
+/* #signup:hover {
   text-decoration: underline;
 }
 #subject:hover {
@@ -174,10 +209,44 @@ header {
 }
 #home:hover {
   text-decoration: underline;
-}
+} */
 /* #home{
   position: fixed;
   top: 50px;
   left: 200px;
 }  */
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
