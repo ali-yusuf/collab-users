@@ -70,7 +70,7 @@ export default defineComponent({
   // setup() {
   // },
   // components: { Button },
-  name: "maths",
+  name: "computerscience",
 
   data() {
     return {

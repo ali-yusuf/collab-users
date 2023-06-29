@@ -37,12 +37,12 @@
 <script>
 //import { defineComponent } from 'vue'     //'@vue/composition-api'
 
-// import ComputerScience from "./test/ComputerScience.vue";
+import ComputerScience from "./ComputerScience.vue";
 import Maths from "./Maths.vue";
 //import Testapi from "./TestApi.vue";
 import Aptitude from "./Aptitude.vue";
 export default {
-  components: { Maths, Aptitude },
+  components: { ComputerScience, Maths, Aptitude },
   // setup() {
   name: "Subject",
   data() {
