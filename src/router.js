@@ -20,7 +20,7 @@ import Chemistry from './components/Chemistry'
 // Vue.use(Router)
 // export default defineComponent({
 const routes = [{
-            path: '/',
+            path: '/collab-users',
             name: 'home',
             component: Home
         },
@@ -35,7 +35,7 @@ const routes = [{
             component: Subject
         },
         {
-            path: '/test',
+            path: '/collab-users/test',
             name: 'test',
             component: Test
         },

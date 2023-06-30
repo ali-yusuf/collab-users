@@ -126,7 +126,7 @@ export default defineComponent({
       alert(this.show);
     },
     home() {
-      this.$router.push({ path: "/" });
+      this.$router.push({ path: "/collab-users" });
     },
     signup() {
       this.$router.push({ path: "/signup" });
@@ -135,7 +135,7 @@ export default defineComponent({
       this.$router.push({ path: "/subject" });
     },
     test() {
-      this.$router.push({ path: "/test" });
+      this.$router.push({ path: "/collab-users/test" });
     },
     aboutus() {
       this.$router.push({ path: "/aboutus" });
