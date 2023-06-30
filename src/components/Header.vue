@@ -132,7 +132,7 @@ export default defineComponent({
       this.$router.push({ path: "/signup" });
     },
     subject() {
-      this.$router.push({ path: "/subject" });
+      this.$router.push({ path: "/collab-users/subject" });
     },
     test() {
       this.$router.push({ path: "/collab-users/test" });

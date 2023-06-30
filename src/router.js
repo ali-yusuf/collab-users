@@ -30,7 +30,7 @@ const routes = [{
             component: PostComponent
         },
         {
-            path: '/subject',
+            path: '/collab-users/subject',
             name: 'subject',
             component: Subject
         },
