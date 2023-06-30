@@ -16,6 +16,15 @@
       <div class="col-md-4">
         <collabCard />
       </div>
+      <div class="col-md-4">
+        <collabCard />
+      </div>
+      <div class="col-md-4">
+        <collabCard />
+      </div>
+      <div class="col-md-4">
+        <collabCard />
+      </div>
     </div>
   </div>
 </template>
