@@ -1,29 +1,40 @@
 <template>
   <div id="subject">
-    Welocme to Subject page bro... <br />
-    you can get the study material from this page only..
-    <div class="search">
-      <input
+    <button
+      class="btn-search btn-primary btn-block"
+      v-on:click="main()"
+      type="submit"
+    >
+      Ask anything..
+    </button>
+    <div v-if="started" class="search">
+      <textarea
         type="text"
         id="searchIten"
         v-model="search"
-        placeholder="search subjects"
-      />
+        placeholder="Enter or paste topic to learn"
+      >
+      </textarea>
+      <button
+        class="btn-send btn-primary btn-block"
+        v-on:click="send()"
+        type="submit"
+      >
+        send
+      </button>
+      <button
+        class="btn-exit btn-primary btn-block"
+        v-on:click="exit()"
+        type="submit"
+      >
+        Exit
+      </button>
     </div>
-    console.log(searchIten);
-    <button
-      class="btn btn-primary btn-block w-75 my-4"
-      v-on:click="filterSubjects"
-      type="submit"
-    >
-      search
-    </button>
+    <div class="content">
+      <p>Answer:</p>
+      <p class="answer">{{ completionText }}</p>
+    </div>
     <!--<Button id="fetch" v-on:click="fetchData" text="Click Here" color="green" />-->
-
-    <ComputerScience />
-    <Maths />
-    <Aptitude />
-    <testapi />
 
     <!-- <div
       class="component"
@@ -36,30 +47,82 @@
 </template>
 <script>
 //import { defineComponent } from 'vue'     //'@vue/composition-api'
+//import readlineSync from "readline-sync";
+import openai from "/config/open-ai.js";
+import colors from "colors";
 
-import ComputerScience from "./ComputerScience.vue";
-import Maths from "./Maths.vue";
-//import Testapi from "./TestApi.vue";
-import Aptitude from "./Aptitude.vue";
 export default {
-  components: { ComputerScience, Maths, Aptitude },
+  components: {},
   // setup() {
   name: "Subject",
   data() {
     return {
       components: [],
       search: "",
+      check: "true",
+      completionText: "",
+      chatHistory: [],
+      messages: "",
+      completion: "",
+      started: false,
     };
+  },
+  computed: {
+    // conversation() {
+    //   return this.main();
+    // },
   },
   methods: {
     // Incomplete method to implement a search bar
-    computed: {
-      filterSubjects: function() {
-        return this.components.filter((comp) => {
-          console.log("subject sorted");
-          return comp.match(this.search);
-        });
-      },
+
+    send() {},
+    exit() {
+      this.search = "Exit";
+      this.started = false;
+      console.log(this.search);
+    },
+    async main() {
+      this.started = true;
+      console.log(colors.bold.green("Welcome to the Chatbot Program!"));
+      console.log(colors.bold.green("You can start chatting with the bot."));
+
+      // Store conversation history
+      while (this.check) {
+        //const userInput = readlineSync.question(colors.yellow("You: "));
+
+        try {
+          // Construct messages by iterating over the history
+          this.messages = this.chatHistory.map(([role, content]) => ({
+            role,
+            content,
+          }));
+
+          // Add latest user input
+          this.messages.push({ role: "user", content: this.search });
+
+          // Call the API with user input & history
+          this.completion = await openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            messages: this.messages,
+          });
+
+          // Get completion text/content
+          this.completionText = this.completion.data.choices[0].message.content;
+
+          if (this.search.toLowerCase() === "exit") {
+            // console.log(colors.green("Bot: ") + this.completionText);
+            return;
+          }
+
+          //console.log(colors.green("Bot: ") + this.completionText);
+
+          // Update history with user input and assistant response
+          this.chatHistory.push(["user", this.search]);
+          this.chatHistory.push(["assistant", this.completionText]);
+        } catch (error) {
+          console.error(colors.red(error));
+        }
+      }
     },
   },
 };
@@ -78,13 +141,47 @@ export default {
 
 .search {
   position: absolute;
-  top: 50px;
-  right: 20px;
-  width: fit-content;
+  top: 140px;
+  left: 10px;
+  height: 100%;
+  width: 100%;
 }
-input {
+textarea {
+  width: 400px;
+  height: 200px;
+}
+.btn-search {
+  position: absolute;
+  margin-top: 30px;
+  width: 300px;
+  margin-left: 30px;
+}
+.btn-send {
+  position: absolute;
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 280px;
+}
+.btn-exit {
+  position: absolute;
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 10px;
+}
+.content {
+  position: absolute;
+  display: flex;
+  left: 450px;
+  margin-top: 85px;
   width: fit-content;
-  height: 40px;
-  font-size: x-large;
+  height: fit-content;
+  border-radius: 1px;
+  border: 1px solid;
+  padding: 10px;
+  min-width: 200px;
+  min-height: 200px;
+}
+.answer {
+  margin-top: 30px;
 }
 </style>

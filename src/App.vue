@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <navbar />
-    <h1>Welocme to yor first page</h1>
-    <button @click="getData">check here</button>
+    <h1>Welocme to yor collab learn ! Learn and grow</h1>
+    <!-- <button @click="getData">check here</button> -->
     <div class="text-bg" v-for="user in tasks" :key="user.Id">
       <h3 class="green-text">{{ user.name }}</h3>
       <p>{{ user.email }}</p>
