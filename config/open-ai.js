@@ -9,13 +9,14 @@ dotenv.config();
 
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
     organization: "YOURE_OPENAI_OGRANIZATION",
 });
 
 configuration.baseOptions.headers = {
-    Authorization: "Bearer " + "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",
+    Authorization: "Bearer " + "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",
 };
+
 const openai = new OpenAIApi(configuration);
 
 export default openai;
