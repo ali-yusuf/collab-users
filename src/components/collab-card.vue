@@ -1,20 +1,17 @@
 <template>
-  <div class="collab-card">
-    <div class="card">
-      <h2 class="align-center">Target CUET 2024</h2>
-      <!-- <img src="img_avatar.png" alt="Avatar" style="width:100%" /> -->
-      <div class="container align-center mt-3">
-        <h3><b>1000+ topic</b></h3>
-        <h4>10000+ questions</h4>
-        <p>Start your preperation with concept and practice</p>
-      </div>
-      <div>
-        <p>
-          For CUET syllabus
-          <a href="/assets/pdfs/IBCUETUG2023.pdf" target="_blank">click here</a
-          >.
-        </p>
-      </div>
+  <div class="card">
+    <h2 class="align-center">Target CUET 2024</h2>
+    <!-- <img src="img_avatar.png" alt="Avatar" style="width:100%" /> -->
+    <div class="container align-center mt-3">
+      <h3><b>1000+ topic</b></h3>
+      <h4>10000+ questions</h4>
+      <p>Start your preperation with concept and practice</p>
+    </div>
+    <div>
+      <p>
+        For CUET syllabus
+        <a href="/assets/pdfs/IBCUETUG2023.pdf" target="_blank">click here</a>.
+      </p>
     </div>
   </div>
 </template>
@@ -26,9 +23,8 @@ export default {
 </script>
 <style scoped>
 .card {
+  display: block;
   transition: 0.3s;
-  width: 400px;
-  height: 400px;
   border-radius: 5px;
   padding: 2rem;
   margin: 2rem;

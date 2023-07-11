@@ -29,5 +29,6 @@ export default {
 <style scoped>
 .btn {
   border-radius: 0;
+  color: white;
 }
 </style>

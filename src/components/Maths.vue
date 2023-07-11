@@ -1,8 +1,6 @@
 <template>
   <div id="maths">
-    Welocme to maths page bro... <br />
-    you can get the naths test series from this page only.. Solve the following
-    questions..
+    <h2>Previous year maths MCQS.</h2>
     <!-- <Button id="fetch" v-on:click="fetchData" text="FetchData" color="green" /> -->
 
     <div class="questions">
@@ -56,7 +54,7 @@
         </div> -->
           <p v-if="capital[task.id]">
             your answer: {{ capital[task.id] }}
-            <span style="color: green;">correct answer: {{ task.answer }}</span>
+            <span style="color: green">correct answer: {{ task.answer }}</span>
           </p>
         </li>
       </ol>
@@ -113,7 +111,7 @@ export default defineComponent({
     //     .catch((err) => console.log(err.meassage));
     //   this.answer = this.mutableList.answer;
     // },
-    incrementCounter: function() {
+    incrementCounter: function () {
       this.count += 1;
     },
   },

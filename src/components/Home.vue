@@ -6,14 +6,24 @@
       For CUET syllabus
       <a href="/assets/pdfs/IBCUETUG2023.pdf" target="_blank">click here</a>.
     </p>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="row mt-5">
+      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
         <collab-card />
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
         <collabCard />
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+        <collabCard />
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+        <collabCard />
+      </div>
+      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+        <collabCard />
+      </div>
+      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
         <collabCard />
       </div>
     </div>
