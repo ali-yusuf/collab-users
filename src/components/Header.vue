@@ -21,41 +21,41 @@
             <Button id="test" v-on:click="test" text="TEST" color="green" />
 
             <div class="dropdown-content">
-              <Button
-                id="maths"
-                v-on:click="maths"
-                text="Mathematics (Applied & Core)"
-                color="green"
-              />
-              <Button
-                id="computer"
-                v-on:click="computer"
-                text="Computer Science/Informatics Practices"
-                color="green"
-              />
-              <Button
-                id="physics"
-                v-on:click="physics"
-                text="Physics"
-                color="green"
-              />
-              <Button
-                id="chemistry"
-                v-on:click="chemistry"
-                text="Chemistry"
-                color="green"
-              />
+              <li>
+                <Button
+                  id="maths"
+                  v-on:click="maths"
+                  text="Mathematics (Applied & Core)"
+                  color="green"
+                />
+              </li>
+              <li>
+                <Button
+                  id="computer"
+                  v-on:click="computer"
+                  text="Computer Science/Informatics Practices"
+                  color="green"
+                />
+              </li>
+              <li>
+                <Button
+                  id="physics"
+                  v-on:click="physics"
+                  text="Physics"
+                  color="green"
+                />
+              </li>
+              <li>
+                <Button
+                  id="chemistry"
+                  v-on:click="chemistry"
+                  text="Chemistry"
+                  color="green"
+                />
+              </li>
             </div>
           </div>
         </li>
-        <!-- <li>
-        <Button
-          id="testapi"
-          v-on:click="testapi"
-          text="TEST Api"
-          color="green"
-        />
-      </li> -->
         <li>
           <Button v-on:click="aboutus" text="About Us" color="green" />
         </li>
@@ -90,30 +90,36 @@
               <Button id="test" v-on:click="test" text="TEST" color="green" />
 
               <div class="dropdown-content">
-                <Button
-                  id="maths"
-                  v-on:click="maths"
-                  text="Mathematics (Applied & Core)"
-                  color="green"
-                />
-                <Button
-                  id="computer"
-                  v-on:click="computer"
-                  text="Computer Science/Informatics Practices"
-                  color="green"
-                />
-                <Button
-                  id="physics"
-                  v-on:click="physics"
-                  text="Physics"
-                  color="green"
-                />
-                <Button
-                  id="chemistry"
-                  v-on:click="chemistry"
-                  text="Chemistry"
-                  color="green"
-                />
+                <li>
+                  <Button
+                    id="maths"
+                    v-on:click="maths"
+                    text="Mathematics (Applied & Core)"
+                    color="green"
+                  />
+                </li>
+                <li>
+                  <Button
+                    id="computer"
+                    v-on:click="computer"
+                    text="Computer Science/Informatics Practices"
+                    color="green"
+                  />
+                </li>
+                <li>
+                  <Button
+                    id="physics"
+                    v-on:click="physics"
+                    text="Physics"
+                    color="green"
+                  />
+                  <Button
+                    id="chemistry"
+                    v-on:click="chemistry"
+                    text="Chemistry"
+                    color="green"
+                  />
+                </li>
               </div>
             </div>
           </li>
@@ -266,7 +272,8 @@ li {
   display: inline;
 }
 header {
-  position: absolute;
+  position: fixed;
+  margin-top: 0 !important;
   /* justify-content: space-between; */
   height: 44px;
   right: 10px;
